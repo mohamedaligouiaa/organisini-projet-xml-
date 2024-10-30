@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steros | LABO</title>
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/organisini.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&#038;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+    
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container  ">
+        <a href="#" class="logo">
+          <img decoding="async" src="images/logosteros.png" alt="Logo" />
+        </a>
+        <nav>
+          <div class="menu-btn"></div>
+          
+          <ul class="menu">
+            <div class="close-btn">
+              
+            </div>
+            <li class="menu-item"><a  href="#">COMPANY</a></li>
+            <li class="menu-item">
+              <a class="active" href="#">TURNKEY SOLUTIONS<i class="fas fa-angle-down"></i></a>
+              
+                <ul class="sub-menu">
+                  <li class="sub-item">
+                    <a href="#"><i class="fa-solid fa-shield-virus"></i></i>STEROS STERILIZATION</a>
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"><i class="fa-solid fa-baby"></i></i>STEROS FERTILITY</a>
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"><i class="fas fa-flask"></i></i>STEROS LAB</a>
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"><i class="fas fa-pump-medical"></i></i>STEROS LAUNDRY</a>
+                  </li>
+                  <li class="sub-item">
+                    <a href="#"><i class="fas fa-briefcase"></i></i>STEROS WORK FORCE</a>
+                  </li>
+                </ul>
+              
+            </li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">PARTNERS</a></li>
+            <li><a href="#">CAREERS</a></li>
+            <li><a href="#">CONTACT US</a></li>
+          </ul>
+         
+        </nav>
+        
+      </div>
+      
+      
+    </header>
+    
+    <script type="text/JavaScript">
+      window.addEventListener("scroll",function(){
+        var header =document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+    <script type="text/JavaScript">
+      $(document).ready(function(){
+        $(".active").click(function(){
+          $(this).next(".sub-menu").slideToggle();
+        });
+      });
+
+      
+      var menu = document.querySelector(".menu");
+      var menuBtn = document.querySelector(".menu-btn");
+      var closeBtn = document.querySelector(".close-btn");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+
+    </script>
+    <!-- End Header -->
+    <!-- Start Landing -->
+    
+    <div class="landing ">
+      
+      <div class="background-slideshow"></div>
+      <div class="overlay"></div>
+      <div class="text">
+        <div class="content">
+            <div class="timer">
+                <div class="box">
+                    <div class="number" id="days">00</div>
+                    <div class="label">DAYS</div>
+                  </div>
+                  <div class="box">
+                    <div class="number" id="hours">00</div>
+                    <div class="label">HOURS</div>
+                  </div>
+                  <div class="box">
+                    <div class="number" id="minutes">00</div>
+                    <div class="label">MINUTES</div>
+                  </div>
+                  <div class="box">
+                    <div class="number" id="seconds">00</div>
+                    <div class="label">SECONDS</div>
+                  </div>
+              </div>
+        </div>
+      </div>
+      <div class="up">
+        <h2>UPCOMING SOON</h2>
+      </div>
+      <div class="up">
+        
+        <h1>
+          wedding<span class="h1__span-1">  EVENT </span>
+        </h1>
+      </div>
+      <div class="up">
+        <h3>31 Nouvembre 2024</h3>
+      </div>
+      <div class="up">
+        <button class="button">DETAILS</button>
+      </div>
+    </div>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    <script>
+        // Date de fin de l'offre
+        const countDownDate = new Date("2024-11-31T23:59:59").getTime();
+      
+        // Mettre à jour le compte à rebours chaque seconde
+        const x = setInterval(function() {
+          const now = new Date().getTime();
+          const distance = countDownDate - now;
+      
+          // Calculer le temps restant
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+          // Afficher le résultat dans les éléments correspondants
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+      
+          // Si le compte à rebours est terminé, afficher un message
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "L'evennement est terminée !";
+          }
+        }, 1000);
+      </script>
